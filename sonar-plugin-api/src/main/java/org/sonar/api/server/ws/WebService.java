@@ -264,8 +264,8 @@ public interface WebService extends Definable<WebService.Context> {
       return this;
     }
 
-    public NewAction setDescription(@Nullable String s) {
-      this.description = s;
+    public NewAction setDescription(@Nullable String message, Object... messageArguments) {
+      this.description = message == null ? null : String.format(message, messageArguments);
       return this;
     }
 
@@ -610,8 +610,8 @@ public interface WebService extends Definable<WebService.Context> {
       return this;
     }
 
-    public NewParam setDescription(@Nullable String s) {
-      this.description = s;
+    public NewParam setDescription(@Nullable String message, Object... messageArguments) {
+      this.description = message == null ? null : String.format(message, messageArguments);
       return this;
     }
 
